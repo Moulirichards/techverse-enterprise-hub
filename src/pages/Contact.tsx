@@ -96,6 +96,25 @@ const Contact = () => {
     'Other'
   ];
 
+  const faqs = [
+    {
+      question: "How long does a typical project take?",
+      answer: "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex enterprise applications can take 3-6 months. We provide detailed timelines during our initial consultation."
+    },
+    {
+      question: "Do you offer ongoing support and maintenance?",
+      answer: "Yes, we provide comprehensive support and maintenance packages. This includes regular updates, security patches, performance monitoring, and technical support."
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "We work across various industries including healthcare, finance, education, e-commerce, manufacturing, and more. Our team has deep expertise in industry-specific requirements and regulations."
+    },
+    {
+      question: "Can you work with our existing systems?",
+      answer: "Absolutely! We specialize in system integration and can work with your existing infrastructure. We'll assess your current setup and recommend the best approach for seamless integration."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -254,7 +273,7 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Response Time</span>
-                    <span className="font-semibold text-brand-teal">< 24 hours</span>
+                    <span className="font-semibold text-brand-teal">{"< 24 hours"}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Project Success Rate</span>
@@ -316,24 +335,7 @@ const Contact = () => {
           </div>
           
           <div className="space-y-6">
-            {[
-              {
-                question: "How long does a typical project take?",
-                answer: "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex enterprise applications can take 3-6 months. We provide detailed timelines during our initial consultation."
-              },
-              {
-                question: "Do you offer ongoing support and maintenance?",
-                answer: "Yes, we provide comprehensive support and maintenance packages. This includes regular updates, security patches, performance monitoring, and technical support."
-              },
-              {
-                question: "What industries do you specialize in?",
-                answer: "We work across various industries including healthcare, finance, education, e-commerce, manufacturing, and more. Our team has deep expertise in industry-specific requirements and regulations."
-              },
-              {
-                question: "Can you work with our existing systems?",
-                answer: "Absolutely! We specialize in system integration and can work with your existing infrastructure. We'll assess your current setup and recommend the best approach for seamless integration."
-              }
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <div key={index} className="border border-gray-200 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
