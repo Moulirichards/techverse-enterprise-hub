@@ -2,15 +2,18 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    subject: '',
+    phone: '',
+    service: '',
     message: ''
   });
 
@@ -23,9 +26,36 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    // Handle form submission logic here
+    console.log('Form submitted:', formData);
+    // Handle form submission here
   };
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: 'Phone',
+      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+      description: 'Call us during business hours'
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      details: ['hello@techverse.com', 'support@techverse.com'],
+      description: 'We respond within 24 hours'
+    },
+    {
+      icon: MapPin,
+      title: 'Headquarters',
+      details: ['123 Tech Street', 'Silicon Valley, CA 94000'],
+      description: 'Visit our main office'
+    },
+    {
+      icon: Clock,
+      title: 'Business Hours',
+      details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat: 10:00 AM - 4:00 PM'],
+      description: 'Pacific Standard Time'
+    }
+  ];
 
   const offices = [
     {
@@ -42,10 +72,28 @@ const Contact = () => {
     },
     {
       city: 'Austin',
-      address: '789 Startup Blvd, Austin, TX 73301',
+      address: '789 Startup Blvd, Austin, TX 78701',
       phone: '+1 (555) 345-6789',
       email: 'austin@techverse.com'
+    },
+    {
+      city: 'Seattle',
+      address: '321 Cloud Way, Seattle, WA 98101',
+      phone: '+1 (555) 456-7890',
+      email: 'seattle@techverse.com'
     }
+  ];
+
+  const services = [
+    'Web Development',
+    'Mobile Apps',
+    'Cloud Solutions',
+    'AI/ML',
+    'Cybersecurity',
+    'Data Analytics',
+    'DevOps',
+    'UI/UX Design',
+    'Other'
   ];
 
   return (
@@ -53,119 +101,125 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-brand-teal/10 to-brand-purple/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Ready to transform your business with cutting-edge technology? Let's discuss your project and explore how we can help you achieve your goals.
           </p>
+          <div className="flex justify-center space-x-8 text-sm text-gray-500">
+            <div className="flex items-center">
+              <Users className="w-4 h-4 mr-2" />
+              200+ Experts Ready
+            </div>
+            <div className="flex items-center">
+              <Globe className="w-4 h-4 mr-2" />
+              Global Support 24/7
+            </div>
+            <div className="flex items-center">
+              <MessageCircle className="w-4 h-4 mr-2" />
+              Free Consultation
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">Send us a message</h2>
+              <h2 className="text-3xl font-bold mb-8 text-gray-900">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
                       id="name"
                       name="name"
+                      type="text"
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your full name"
+                      className="mt-1"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
                       id="email"
                       name="email"
+                      type="email"
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="your.email@company.com"
+                      className="mt-1"
                     />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
+                    <Label htmlFor="company">Company Name</Label>
+                    <Input
                       id="company"
                       name="company"
+                      type="text"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your company name"
+                      className="mt-1"
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="web-development">Web Development</option>
-                      <option value="mobile-apps">Mobile Apps</option>
-                      <option value="cloud-solutions">Cloud Solutions</option>
-                      <option value="ai-ml">AI/ML</option>
-                      <option value="cybersecurity">Cybersecurity</option>
-                      <option value="general-inquiry">General Inquiry</option>
-                    </select>
+                      className="mt-1"
+                    />
                   </div>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
+                  <Label htmlFor="service">Service of Interest</Label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-teal"
+                  >
+                    <option value="">Select a service...</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <Label htmlFor="message">Message *</Label>
                   <textarea
                     id="message"
                     name="message"
+                    rows={5}
                     required
-                    rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Tell us about your project, requirements, and timeline..."
+                    className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-teal"
+                    placeholder="Tell us about your project requirements..."
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 py-3"
-                >
-                  <Send className="w-5 h-5 mr-2" />
+
+                <Button type="submit" className="w-full bg-gradient-to-r from-brand-teal to-brand-purple hover:from-brand-teal/90 hover:to-brand-purple/90">
+                  <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>
               </form>
@@ -174,67 +228,46 @@ const Contact = () => {
             {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-bold mb-8 text-gray-900">Contact Information</h2>
-              
-              {/* Quick Contact */}
-              <div className="space-y-6 mb-12">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9am-6pm PST</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">hello@techverse.com</p>
-                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Office Locations */}
-              <div>
-                <h3 className="text-xl font-semibold mb-6 text-gray-900">Office Locations</h3>
-                <div className="space-y-6">
-                  {offices.map((office, index) => (
-                    <div key={index} className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">{office.city} Office</h4>
-                      <div className="space-y-2 text-sm text-gray-600">
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-2 text-gray-400" />
-                          {office.address}
-                        </div>
-                        <div className="flex items-center">
-                          <Phone className="w-4 h-4 mr-2 text-gray-400" />
-                          {office.phone}
-                        </div>
-                        <div className="flex items-center">
-                          <Mail className="w-4 h-4 mr-2 text-gray-400" />
-                          {office.email}
-                        </div>
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => {
+                  const IconComponent = info.icon;
+                  return (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-brand-teal to-brand-purple rounded-lg flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-gray-600">{detail}</p>
+                        ))}
+                        <p className="text-sm text-gray-500 mt-1">{info.description}</p>
                       </div>
                     </div>
-                  ))}
+                  );
+                })}
+              </div>
+
+              {/* Quick Stats */}
+              <div className="mt-12 p-6 bg-gray-50 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Response Time</span>
+                    <span className="font-semibold text-brand-teal">< 24 hours</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Project Success Rate</span>
+                    <span className="font-semibold text-brand-teal">98%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Client Satisfaction</span>
+                    <span className="font-semibold text-brand-teal">4.9/5</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Years in Business</span>
+                    <span className="font-semibold text-brand-teal">10+</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -242,28 +275,70 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Emergency Contact */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Need Urgent Technical Support?</h3>
-            <p className="text-red-100 mb-6">
-              For critical system issues or emergency support, contact our 24/7 technical support team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="outline" 
-                className="bg-white text-red-600 border-white hover:bg-red-50"
-              >
-                Call Emergency Support: +1 (555) 911-TECH
-              </Button>
-              <Button 
-                variant="outline" 
-                className="bg-white text-red-600 border-white hover:bg-red-50"
-              >
-                Email: emergency@techverse.com
-              </Button>
-            </div>
+      {/* Office Locations */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Offices</h2>
+            <p className="text-xl text-gray-600">Visit us at any of our locations worldwide</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {offices.map((office, index) => (
+              <div key={index} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold mb-4 text-brand-teal">{office.city}</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start">
+                    <MapPin className="w-4 h-4 mr-2 mt-0.5 text-gray-400" />
+                    <span className="text-gray-600">{office.address}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Phone className="w-4 h-4 mr-2 text-gray-400" />
+                    <span className="text-gray-600">{office.phone}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Mail className="w-4 h-4 mr-2 text-gray-400" />
+                    <span className="text-gray-600">{office.email}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">Quick answers to common questions</p>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "How long does a typical project take?",
+                answer: "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex enterprise applications can take 3-6 months. We provide detailed timelines during our initial consultation."
+              },
+              {
+                question: "Do you offer ongoing support and maintenance?",
+                answer: "Yes, we provide comprehensive support and maintenance packages. This includes regular updates, security patches, performance monitoring, and technical support."
+              },
+              {
+                question: "What industries do you specialize in?",
+                answer: "We work across various industries including healthcare, finance, education, e-commerce, manufacturing, and more. Our team has deep expertise in industry-specific requirements and regulations."
+              },
+              {
+                question: "Can you work with our existing systems?",
+                answer: "Absolutely! We specialize in system integration and can work with your existing infrastructure. We'll assess your current setup and recommend the best approach for seamless integration."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg p-6">
+                <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
