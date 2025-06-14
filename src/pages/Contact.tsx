@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Users, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare, Users, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,14 +13,17 @@ const Contact = () => {
     company: '',
     phone: '',
     service: '',
-    message: ''
+    budget: '',
+    message: '',
+    timeline: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -120,36 +122,59 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-teal/10 to-brand-purple/10 py-20">
+      <section className="bg-brand-teal/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
-              Get In Touch
-            </span>
+          <h1 className="text-5xl font-bold mb-6 text-brand-teal">
+            Get In Touch
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Ready to transform your business with cutting-edge technology? Let's discuss your project and explore how we can help you achieve your goals.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Ready to transform your business with technology? Let's discuss your project and explore how we can help you achieve your goals.
           </p>
-          <div className="flex justify-center space-x-8 text-sm text-gray-500">
-            <div className="flex items-center">
-              <Users className="w-4 h-4 mr-2" />
-              200+ Experts Ready
-            </div>
-            <div className="flex items-center">
-              <Globe className="w-4 h-4 mr-2" />
-              Global Support 24/7
-            </div>
-            <div className="flex items-center">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Free Consultation
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Methods */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                icon: Phone,
+                title: 'Call Us',
+                content: '+1 (555) 123-4567',
+                description: 'Mon-Fri from 8am to 6pm PST',
+                bgColor: 'bg-brand-teal'
+              },
+              {
+                icon: Mail,
+                title: 'Email Us',
+                content: 'hello@techverse.com',
+                description: 'We respond within 24 hours',
+                bgColor: 'bg-brand-purple'
+              },
+              {
+                icon: MessageSquare,
+                title: 'Live Chat',
+                content: 'Start a conversation',
+                description: 'Available during business hours',
+                bgColor: 'bg-brand-blue'
+              }
+            ].map((method, index) => {
+              const IconComponent = method.icon;
+              return (
+                <div key={index} className="text-center p-8 rounded-lg border hover:shadow-lg transition-shadow">
+                  <div className={`w-16 h-16 ${method.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">{method.title}</h3>
+                  <p className="text-brand-teal font-medium mb-2">{method.content}</p>
+                  <p className="text-gray-600 text-sm">{method.description}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Contact Form & Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
@@ -221,6 +246,30 @@ const Contact = () => {
                       <option key={service} value={service}>{service}</option>
                     ))}
                   </select>
+                </div>
+
+                <div>
+                  <Label htmlFor="budget">Budget</Label>
+                  <Input
+                    id="budget"
+                    name="budget"
+                    type="text"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    className="mt-1"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="timeline">Timeline</Label>
+                  <Input
+                    id="timeline"
+                    name="timeline"
+                    type="text"
+                    value={formData.timeline}
+                    onChange={handleInputChange}
+                    className="mt-1"
+                  />
                 </div>
 
                 <div>

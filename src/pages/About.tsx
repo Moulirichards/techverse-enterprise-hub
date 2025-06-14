@@ -49,32 +49,38 @@ const About = () => {
     {
       icon: Heart,
       title: 'Client First',
-      description: 'We put our clients at the center of everything we do, ensuring their success is our success.'
+      description: 'We put our clients at the center of everything we do, ensuring their success is our success.',
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: Lightbulb,
       title: 'Innovation',
-      description: 'We constantly explore new technologies and methodologies to deliver cutting-edge solutions.'
+      description: 'We constantly explore new technologies and methodologies to deliver cutting-edge solutions.',
+      bgColor: 'bg-brand-purple'
     },
     {
       icon: Shield,
       title: 'Quality',
-      description: 'We maintain the highest standards in code quality, security, and performance.'
+      description: 'We maintain the highest standards in code quality, security, and performance.',
+      bgColor: 'bg-brand-blue'
     },
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'We believe in the power of diverse teams working together to achieve extraordinary results.'
+      description: 'We believe in the power of diverse teams working together to achieve extraordinary results.',
+      bgColor: 'bg-brand-pink'
     },
     {
       icon: Target,
       title: 'Results',
-      description: 'We focus on delivering measurable business outcomes and ROI for our clients.'
+      description: 'We focus on delivering measurable business outcomes and ROI for our clients.',
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: Zap,
       title: 'Agility',
-      description: 'We adapt quickly to changing requirements and market conditions.'
+      description: 'We adapt quickly to changing requirements and market conditions.',
+      bgColor: 'bg-brand-purple'
     }
   ];
 
@@ -116,13 +122,11 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-teal/10 to-brand-purple/10 py-20">
+      <section className="bg-brand-teal/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
-                About TechVerse
-              </span>
+            <h1 className="text-5xl font-bold mb-6 text-brand-teal">
+              About TechVerse
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               We are a team of passionate technologists, designers, and strategists who believe in the power of technology to transform businesses and improve lives. Since 2014, we've been helping organizations navigate the digital landscape and achieve their most ambitious goals.
@@ -180,7 +184,7 @@ const About = () => {
               const IconComponent = value.icon;
               return (
                 <div key={index} className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-brand-teal to-brand-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className={`w-16 h-16 ${value.bgColor} rounded-full flex items-center justify-center mx-auto mb-6`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-gray-900">{value.title}</h3>

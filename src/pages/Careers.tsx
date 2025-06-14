@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -67,32 +66,38 @@ const Careers = () => {
     {
       icon: Heart,
       title: 'Health & Wellness',
-      description: 'Comprehensive health insurance, dental, vision, mental health support, and wellness programs'
+      description: 'Comprehensive health insurance, dental, vision, mental health support, and wellness programs',
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: DollarSign,
       title: 'Competitive Compensation',
-      description: 'Market-competitive salaries with equity options, performance bonuses, and annual reviews'
+      description: 'Market-competitive salaries with equity options, performance bonuses, and annual reviews',
+      bgColor: 'bg-brand-purple'
     },
     {
       icon: Clock,
       title: 'Work-Life Balance',
-      description: 'Flexible working hours, remote work options, unlimited PTO, and sabbatical opportunities'
+      description: 'Flexible working hours, remote work options, unlimited PTO, and sabbatical opportunities',
+      bgColor: 'bg-brand-blue'
     },
     {
       icon: Users,
       title: 'Learning & Development',
-      description: 'Professional development budget, conference attendance, skill training, and mentorship programs'
+      description: 'Professional development budget, conference attendance, skill training, and mentorship programs',
+      bgColor: 'bg-brand-pink'
     },
     {
       icon: Coffee,
       title: 'Office Perks',
-      description: 'Free meals, snacks, coffee, game rooms, and modern office spaces in prime locations'
+      description: 'Free meals, snacks, coffee, game rooms, and modern office spaces in prime locations',
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: Globe,
       title: 'Global Opportunities',
-      description: 'Work with international teams, travel opportunities, and global project assignments'
+      description: 'Work with international teams, travel opportunities, and global project assignments',
+      bgColor: 'bg-brand-purple'
     }
   ];
 
@@ -108,12 +113,10 @@ const Careers = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-teal/10 to-brand-purple/10 py-20">
+      <section className="bg-brand-teal/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
-              Build Your Future with TechVerse
-            </span>
+          <h1 className="text-5xl font-bold mb-6 text-brand-teal">
+            Build Your Future with TechVerse
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Join a team of passionate innovators who are shaping the future of technology. We're looking for talented individuals who want to make a real impact in the world.
@@ -142,7 +145,7 @@ const Careers = () => {
               const IconComponent = benefit.icon;
               return (
                 <div key={benefit.title} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                  <div className="w-16 h-16 bg-gradient-to-r from-brand-teal to-brand-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className={`w-16 h-16 ${benefit.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>

@@ -38,10 +38,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-brand-teal to-brand-purple rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-brand-teal rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">T</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-brand-teal">
                 TechVerse
               </span>
             </a>
@@ -108,7 +108,7 @@ const Header = () => {
             <a href="/careers" className="text-gray-700 hover:text-brand-teal transition-colors">Careers</a>
             <a href="/contact" className="text-gray-700 hover:text-brand-teal transition-colors">Contact</a>
             
-            <Button className="bg-gradient-to-r from-brand-teal to-brand-purple hover:from-brand-teal/90 hover:to-brand-purple/90">
+            <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white">
               Get Started
             </Button>
           </nav>
@@ -135,7 +135,7 @@ const Header = () => {
               <a href="/products" className="text-gray-700 hover:text-brand-teal">Products</a>
               <a href="/careers" className="text-gray-700 hover:text-brand-teal">Careers</a>
               <a href="/contact" className="text-gray-700 hover:text-brand-teal">Contact</a>
-              <Button className="bg-gradient-to-r from-brand-teal to-brand-purple w-full">
+              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white w-full">
                 Get Started
               </Button>
             </div>

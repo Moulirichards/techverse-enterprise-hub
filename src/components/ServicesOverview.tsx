@@ -20,63 +20,63 @@ const ServicesOverview = () => {
       title: 'Web Development',
       description: 'Custom web applications built with React, Vue, Angular, and Node.js.',
       href: '/services/web-development',
-      gradient: 'from-brand-teal to-brand-blue'
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: Smartphone,
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications for iOS and Android.',
       href: '/services/mobile-apps',
-      gradient: 'from-brand-purple to-brand-pink'
+      bgColor: 'bg-brand-purple'
     },
     {
       icon: Cloud,
       title: 'Cloud Solutions',
       description: 'AWS, Azure, and Google Cloud infrastructure and migration services.',
       href: '/services/cloud-solutions',
-      gradient: 'from-brand-blue to-brand-teal'
+      bgColor: 'bg-brand-blue'
     },
     {
       icon: Brain,
       title: 'AI/ML',
       description: 'Machine Learning, NLP, and Computer Vision solutions.',
       href: '/services/ai-ml',
-      gradient: 'from-brand-pink to-brand-purple'
+      bgColor: 'bg-brand-pink'
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
       description: 'Comprehensive security solutions and consulting services.',
       href: '/services/cybersecurity',
-      gradient: 'from-brand-teal to-brand-purple'
+      bgColor: 'bg-brand-teal'
     },
     {
       icon: BarChart3,
       title: 'Data Analytics',
       description: 'Business intelligence and advanced analytics solutions.',
       href: '/services/data-analytics',
-      gradient: 'from-brand-purple to-brand-blue'
+      bgColor: 'bg-brand-purple'
     },
     {
       icon: GitBranch,
       title: 'DevOps',
       description: 'CI/CD pipelines and infrastructure automation services.',
       href: '/services/devops',
-      gradient: 'from-brand-blue to-brand-pink'
+      bgColor: 'bg-brand-blue'
     },
     {
       icon: TestTube,
       title: 'QA Testing',
       description: 'Comprehensive quality assurance and testing services.',
       href: '/services/qa-testing',
-      gradient: 'from-brand-pink to-brand-teal'
+      bgColor: 'bg-brand-pink'
     },
     {
       icon: Palette,
       title: 'UI/UX Design',
       description: 'User-centered design and exceptional user experiences.',
       href: '/services/ui-ux-design',
-      gradient: 'from-brand-purple to-brand-pink'
+      bgColor: 'bg-brand-purple'
     }
   ];
 
@@ -85,10 +85,8 @@ const ServicesOverview = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
-              Our Services
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-teal">
+            Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From concept to deployment, we offer comprehensive technology services that drive digital transformation and business growth.
@@ -105,7 +103,7 @@ const ServicesOverview = () => {
                 className="group bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`w-12 h-12 bg-gradient-to-r ${service.gradient} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-12 h-12 ${service.bgColor} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <IconComponent className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
@@ -139,7 +137,7 @@ const ServicesOverview = () => {
               <a
                 key={industry}
                 href={`/industries/${industry.toLowerCase().replace(' ', '-')}`}
-                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-gradient-to-r hover:from-brand-teal/5 hover:to-brand-purple/5"
+                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-brand-teal/5"
               >
                 <div className="text-brand-teal font-semibold group-hover:text-brand-purple transition-colors">
                   {industry}
@@ -151,7 +149,7 @@ const ServicesOverview = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-to-r from-brand-teal to-brand-purple hover:from-brand-teal/90 hover:to-brand-purple/90">
+          <Button size="lg" className="bg-brand-teal hover:bg-brand-teal/90 text-white">
             View All Services
           </Button>
         </div>
