@@ -13,14 +13,22 @@ const Header = () => {
     { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
     { name: 'AI/ML', href: '/services/ai-ml' },
     { name: 'Cybersecurity', href: '/services/cybersecurity' },
-    { name: 'DevOps', href: '/services/devops' }
+    { name: 'Data Analytics', href: '/services/data-analytics' },
+    { name: 'DevOps', href: '/services/devops' },
+    { name: 'QA Testing', href: '/services/qa-testing' },
+    { name: 'UI/UX Design', href: '/services/ui-ux-design' }
   ];
 
   const industries = [
     { name: 'Healthcare', href: '/industries/healthcare' },
     { name: 'Finance', href: '/industries/finance' },
     { name: 'Education', href: '/industries/education' },
-    { name: 'E-commerce', href: '/industries/ecommerce' }
+    { name: 'E-commerce', href: '/industries/ecommerce' },
+    { name: 'Manufacturing', href: '/industries/manufacturing' },
+    { name: 'Retail', href: '/industries/retail' },
+    { name: 'Gaming', href: '/industries/gaming' },
+    { name: 'Real Estate', href: '/industries/real-estate' },
+    { name: 'Automotive', href: '/industries/automotive' }
   ];
 
   return (

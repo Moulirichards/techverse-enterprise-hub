@@ -18,7 +18,7 @@ const ServicesOverview = () => {
     {
       icon: Code,
       title: 'Web Development',
-      description: 'Custom web applications built with modern frameworks and best practices.',
+      description: 'Custom web applications built with React, Vue, Angular, and Node.js.',
       href: '/services/web-development',
       gradient: 'from-blue-500 to-cyan-500'
     },
@@ -32,35 +32,35 @@ const ServicesOverview = () => {
     {
       icon: Cloud,
       title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and migration services.',
+      description: 'AWS, Azure, and Google Cloud infrastructure and migration services.',
       href: '/services/cloud-solutions',
       gradient: 'from-green-500 to-teal-500'
     },
     {
       icon: Brain,
       title: 'AI/ML',
-      description: 'Artificial intelligence and machine learning solutions.',
+      description: 'Machine Learning, NLP, and Computer Vision solutions.',
       href: '/services/ai-ml',
       gradient: 'from-orange-500 to-red-500'
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
-      description: 'Comprehensive security solutions and consulting.',
+      description: 'Comprehensive security solutions and consulting services.',
       href: '/services/cybersecurity',
       gradient: 'from-red-500 to-pink-500'
     },
     {
       icon: BarChart3,
       title: 'Data Analytics',
-      description: 'Business intelligence and advanced analytics.',
+      description: 'Business intelligence and advanced analytics solutions.',
       href: '/services/data-analytics',
       gradient: 'from-yellow-500 to-orange-500'
     },
     {
       icon: GitBranch,
       title: 'DevOps',
-      description: 'CI/CD pipelines and infrastructure automation.',
+      description: 'CI/CD pipelines and infrastructure automation services.',
       href: '/services/devops',
       gradient: 'from-indigo-500 to-purple-500'
     },
@@ -74,7 +74,7 @@ const ServicesOverview = () => {
     {
       icon: Palette,
       title: 'UI/UX Design',
-      description: 'User-centered design and exceptional experiences.',
+      description: 'User-centered design and exceptional user experiences.',
       href: '/services/ui-ux-design',
       gradient: 'from-pink-500 to-rose-500'
     }
@@ -124,8 +124,33 @@ const ServicesOverview = () => {
           })}
         </div>
 
+        {/* Industries Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">Industries We Serve</h3>
+            <p className="text-lg text-gray-600">Specialized solutions for diverse industry needs</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              'Healthcare', 'Finance', 'Education', 'E-commerce', 'Manufacturing',
+              'Retail', 'Gaming', 'Real Estate', 'Automotive'
+            ].map((industry, index) => (
+              <a
+                key={industry}
+                href={`/industries/${industry.toLowerCase().replace(' ', '-')}`}
+                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                  {industry}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
             View All Services
           </Button>
