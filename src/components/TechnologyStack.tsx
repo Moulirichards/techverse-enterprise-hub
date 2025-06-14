@@ -6,32 +6,32 @@ const TechnologyStack = () => {
     {
       category: 'Frontend',
       items: ['React', 'Vue.js', 'Angular', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      color: 'brand-teal'
+      color: 'brand-primary'
     },
     {
       category: 'Backend',
       items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'PHP'],
-      color: 'brand-purple'
+      color: 'brand-accent'
     },
     {
       category: 'Mobile',
       items: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin', 'Ionic'],
-      color: 'brand-pink'
+      color: 'brand-green'
     },
     {
       category: 'Cloud',
       items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform'],
-      color: 'brand-blue'
+      color: 'brand-purple'
     },
     {
       category: 'Database',
       items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'DynamoDB', 'Elasticsearch'],
-      color: 'brand-teal'
+      color: 'brand-secondary'
     },
     {
       category: 'AI/ML',
       items: ['TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'Scikit-learn', 'Pandas'],
-      color: 'brand-purple'
+      color: 'brand-primary'
     }
   ];
 
@@ -41,7 +41,7 @@ const TechnologyStack = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
               Technology Stack
             </span>
           </h2>
@@ -55,7 +55,7 @@ const TechnologyStack = () => {
           {technologies.map((tech, index) => (
             <div
               key={tech.category}
-              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border border-gray-200 hover:border-brand-teal/50 hover:shadow-lg transition-all duration-300 animate-fade-in"
+              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border border-gray-200 hover:border-brand-primary/50 hover:shadow-lg transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <h3 className={`text-xl font-semibold mb-6 text-${tech.color} border-b border-${tech.color}/20 pb-3`}>
@@ -78,10 +78,10 @@ const TechnologyStack = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-brand-teal to-brand-purple rounded-2xl p-8 text-white shadow-2xl">
+          <div className="bg-gradient-to-r from-brand-primary to-brand-secondary rounded-2xl p-8 text-white shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">Ready to leverage these technologies?</h3>
             <p className="text-white/90 mb-6">Let's discuss how we can apply the right tech stack for your project.</p>
-            <button className="bg-white text-brand-teal px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+            <button className="bg-white text-brand-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
               Start a Conversation
             </button>
           </div>

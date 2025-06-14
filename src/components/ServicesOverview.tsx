@@ -20,56 +20,56 @@ const ServicesOverview = () => {
       title: 'Web Development',
       description: 'Custom web applications built with React, Vue, Angular, and Node.js.',
       href: '/services/web-development',
-      bgColor: 'bg-brand-teal'
+      bgColor: 'bg-brand-primary'
     },
     {
       icon: Smartphone,
       title: 'Mobile Apps',
       description: 'Native and cross-platform mobile applications for iOS and Android.',
       href: '/services/mobile-apps',
-      bgColor: 'bg-brand-purple'
+      bgColor: 'bg-brand-accent'
     },
     {
       icon: Cloud,
       title: 'Cloud Solutions',
       description: 'AWS, Azure, and Google Cloud infrastructure and migration services.',
       href: '/services/cloud-solutions',
-      bgColor: 'bg-brand-blue'
+      bgColor: 'bg-brand-green'
     },
     {
       icon: Brain,
       title: 'AI/ML',
       description: 'Machine Learning, NLP, and Computer Vision solutions.',
       href: '/services/ai-ml',
-      bgColor: 'bg-brand-pink'
+      bgColor: 'bg-brand-purple'
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
       description: 'Comprehensive security solutions and consulting services.',
       href: '/services/cybersecurity',
-      bgColor: 'bg-brand-teal'
+      bgColor: 'bg-brand-secondary'
     },
     {
       icon: BarChart3,
       title: 'Data Analytics',
       description: 'Business intelligence and advanced analytics solutions.',
       href: '/services/data-analytics',
-      bgColor: 'bg-brand-purple'
+      bgColor: 'bg-brand-primary'
     },
     {
       icon: GitBranch,
       title: 'DevOps',
       description: 'CI/CD pipelines and infrastructure automation services.',
       href: '/services/devops',
-      bgColor: 'bg-brand-blue'
+      bgColor: 'bg-brand-accent'
     },
     {
       icon: TestTube,
       title: 'QA Testing',
       description: 'Comprehensive quality assurance and testing services.',
       href: '/services/qa-testing',
-      bgColor: 'bg-brand-pink'
+      bgColor: 'bg-brand-green'
     },
     {
       icon: Palette,
@@ -85,7 +85,7 @@ const ServicesOverview = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-teal">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-primary">
             Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ const ServicesOverview = () => {
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <a
                   href={service.href}
-                  className="inline-flex items-center text-brand-teal hover:text-brand-purple font-medium transition-colors"
+                  className="inline-flex items-center text-brand-primary hover:text-brand-secondary font-medium transition-colors"
                 >
                   Learn More
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,9 +137,9 @@ const ServicesOverview = () => {
               <a
                 key={industry}
                 href={`/industries/${industry.toLowerCase().replace(' ', '-')}`}
-                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-brand-teal/5"
+                className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-brand-primary/5"
               >
-                <div className="text-brand-teal font-semibold group-hover:text-brand-purple transition-colors">
+                <div className="text-brand-primary font-semibold group-hover:text-brand-secondary transition-colors">
                   {industry}
                 </div>
               </a>
@@ -149,7 +149,7 @@ const ServicesOverview = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-brand-teal hover:bg-brand-teal/90 text-white">
+          <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-white">
             View All Services
           </Button>
         </div>

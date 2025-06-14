@@ -7,28 +7,28 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-white to-pink-50">
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-blue-50">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-brand-teal rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-brand-purple rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-brand-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-brand-primary rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-brand-accent rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-brand-purple rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-teal/10 text-brand-teal text-sm font-medium mb-8 animate-fade-in border border-brand-teal/20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-medium mb-8 animate-fade-in border border-brand-primary/20">
             <Zap className="w-4 h-4 mr-2" />
             Leading Digital Transformation Since 2010
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <span className="bg-gradient-to-r from-gray-900 via-brand-purple to-brand-teal bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gray-900 via-brand-accent to-brand-primary bg-clip-text text-transparent">
               Enterprise Technology
             </span>
             <br />
-            <span className="bg-gradient-to-r from-brand-teal to-brand-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-green bg-clip-text text-transparent">
               Solutions
             </span>
           </h1>
@@ -40,10 +40,10 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="bg-gradient-to-r from-brand-teal to-brand-purple hover:from-brand-teal/90 hover:to-brand-purple/90 text-white text-lg px-8 py-4">
+            <Button size="lg" className="bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary/90 hover:to-brand-secondary/90 text-white text-lg px-8 py-4">
               Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white">
               <Play className="mr-2 h-5 w-5" /> Watch Demo
             </Button>
           </div>
@@ -51,15 +51,15 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent mb-2">500+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent mb-2">500+</div>
               <div className="text-gray-600">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent mb-2">50+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-brand-accent to-brand-purple bg-clip-text text-transparent mb-2">50+</div>
               <div className="text-gray-600">Enterprise Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-brand-pink to-brand-blue bg-clip-text text-transparent mb-2">15+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-brand-green to-brand-accent bg-clip-text text-transparent mb-2">15+</div>
               <div className="text-gray-600">Countries Served</div>
             </div>
           </div>
@@ -67,9 +67,9 @@ const HeroSection = () => {
 
         {/* Floating Cards */}
         <div className="absolute top-1/4 left-8 hidden lg:block animate-float">
-          <div className="bg-white rounded-lg shadow-lg p-4 max-w-xs border-l-4 border-brand-teal">
+          <div className="bg-white rounded-lg shadow-lg p-4 max-w-xs border-l-4 border-brand-primary">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-brand-teal rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div>
@@ -81,9 +81,9 @@ const HeroSection = () => {
         </div>
 
         <div className="absolute top-1/3 right-8 hidden lg:block animate-float" style={{ animationDelay: '1s' }}>
-          <div className="bg-white rounded-lg shadow-lg p-4 max-w-xs border-l-4 border-brand-purple">
+          <div className="bg-white rounded-lg shadow-lg p-4 max-w-xs border-l-4 border-brand-accent">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-brand-purple rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center">
                 <Globe className="w-5 h-5 text-white" />
               </div>
               <div>

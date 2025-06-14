@@ -22,12 +22,14 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Interactive brand colors
+				// Interactive brand colors - New vibrant palette
 				brand: {
-					teal: '#00D4AA',      // Vibrant teal
-					purple: '#8B5FBF',    // Electric purple
-					pink: '#FF6B6B',      // Coral pink
-					blue: '#4ECDC4'       // Bright turquoise blue
+					primary: '#FF6B35',    // Vibrant orange
+					secondary: '#F7931E',  // Golden orange
+					accent: '#2E86AB',     // Ocean blue
+					purple: '#A23B72',     // Deep magenta
+					green: '#16DB93',      // Mint green
+					dark: '#2D3748'        // Dark slate
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

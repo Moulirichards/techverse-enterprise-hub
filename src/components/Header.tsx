@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -38,10 +37,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-teal rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">T</span>
               </div>
-              <span className="text-xl font-bold text-brand-teal">
+              <span className="text-xl font-bold text-brand-primary">
                 TechVerse
               </span>
             </a>
@@ -49,8 +48,8 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-700 hover:text-brand-teal transition-colors">Home</a>
-            <a href="/about" className="text-gray-700 hover:text-brand-teal transition-colors">About</a>
+            <a href="/" className="text-gray-700 hover:text-brand-primary transition-colors">Home</a>
+            <a href="/about" className="text-gray-700 hover:text-brand-primary transition-colors">About</a>
             
             {/* Services Dropdown */}
             <div 
@@ -58,7 +57,7 @@ const Header = () => {
               onMouseEnter={() => setActiveDropdown('services')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center text-gray-700 hover:text-brand-teal transition-colors">
+              <button className="flex items-center text-gray-700 hover:text-brand-primary transition-colors">
                 Services <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {activeDropdown === 'services' && (
@@ -68,7 +67,7 @@ const Header = () => {
                       <a
                         key={service.name}
                         href={service.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-teal/10 hover:text-brand-teal"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-primary/10 hover:text-brand-primary"
                       >
                         {service.name}
                       </a>
@@ -84,7 +83,7 @@ const Header = () => {
               onMouseEnter={() => setActiveDropdown('industries')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center text-gray-700 hover:text-brand-teal transition-colors">
+              <button className="flex items-center text-gray-700 hover:text-brand-primary transition-colors">
                 Industries <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {activeDropdown === 'industries' && (
@@ -94,7 +93,7 @@ const Header = () => {
                       <a
                         key={industry.name}
                         href={industry.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-teal/10 hover:text-brand-teal"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-primary/10 hover:text-brand-primary"
                       >
                         {industry.name}
                       </a>
@@ -104,11 +103,11 @@ const Header = () => {
               )}
             </div>
 
-            <a href="/products" className="text-gray-700 hover:text-brand-teal transition-colors">Products</a>
-            <a href="/careers" className="text-gray-700 hover:text-brand-teal transition-colors">Careers</a>
-            <a href="/contact" className="text-gray-700 hover:text-brand-teal transition-colors">Contact</a>
+            <a href="/products" className="text-gray-700 hover:text-brand-primary transition-colors">Products</a>
+            <a href="/careers" className="text-gray-700 hover:text-brand-primary transition-colors">Careers</a>
+            <a href="/contact" className="text-gray-700 hover:text-brand-primary transition-colors">Contact</a>
             
-            <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white">
+            <Button className="bg-brand-primary hover:bg-brand-primary/90 text-white">
               Get Started
             </Button>
           </nav>
@@ -117,7 +116,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-brand-teal"
+              className="text-gray-700 hover:text-brand-primary"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -128,14 +127,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
-              <a href="/" className="text-gray-700 hover:text-brand-teal">Home</a>
-              <a href="/about" className="text-gray-700 hover:text-brand-teal">About</a>
-              <a href="/services" className="text-gray-700 hover:text-brand-teal">Services</a>
-              <a href="/industries" className="text-gray-700 hover:text-brand-teal">Industries</a>
-              <a href="/products" className="text-gray-700 hover:text-brand-teal">Products</a>
-              <a href="/careers" className="text-gray-700 hover:text-brand-teal">Careers</a>
-              <a href="/contact" className="text-gray-700 hover:text-brand-teal">Contact</a>
-              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white w-full">
+              <a href="/" className="text-gray-700 hover:text-brand-primary">Home</a>
+              <a href="/about" className="text-gray-700 hover:text-brand-primary">About</a>
+              <a href="/services" className="text-gray-700 hover:text-brand-primary">Services</a>
+              <a href="/industries" className="text-gray-700 hover:text-brand-primary">Industries</a>
+              <a href="/products" className="text-gray-700 hover:text-brand-primary">Products</a>
+              <a href="/careers" className="text-gray-700 hover:text-brand-primary">Careers</a>
+              <a href="/contact" className="text-gray-700 hover:text-brand-primary">Contact</a>
+              <Button className="bg-brand-primary hover:bg-brand-primary/90 text-white w-full">
                 Get Started
               </Button>
             </div>

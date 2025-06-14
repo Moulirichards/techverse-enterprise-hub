@@ -12,7 +12,7 @@ const Testimonials = () => {
       rating: 5,
       content: 'TechVerse transformed our legacy healthcare systems into a modern, HIPAA-compliant platform. Their expertise in healthcare technology is unmatched.',
       project: 'Healthcare Platform Modernization',
-      color: 'brand-teal'
+      color: 'brand-primary'
     },
     {
       name: 'Michael Chen',
@@ -22,7 +22,7 @@ const Testimonials = () => {
       rating: 5,
       content: 'The AI-powered fraud detection system they built has reduced our false positives by 80% while improving security. Exceptional work.',
       project: 'AI Fraud Detection System',
-      color: 'brand-purple'
+      color: 'brand-accent'
     },
     {
       name: 'Emily Rodriguez',
@@ -32,7 +32,7 @@ const Testimonials = () => {
       rating: 5,
       content: 'Our e-learning platform now serves 2M+ students globally. TechVerse delivered scalable architecture that grows with our needs.',
       project: 'E-Learning Platform Development',
-      color: 'brand-pink'
+      color: 'brand-green'
     },
     {
       name: 'David Thompson',
@@ -42,7 +42,7 @@ const Testimonials = () => {
       rating: 5,
       content: 'The omnichannel e-commerce solution increased our online sales by 300%. Their team understood our business needs perfectly.',
       project: 'Omnichannel E-commerce Platform',
-      color: 'brand-blue'
+      color: 'brand-purple'
     },
     {
       name: 'Lisa Park',
@@ -52,7 +52,7 @@ const Testimonials = () => {
       rating: 5,
       content: 'TechVerse helped us implement Industry 4.0 IoT solutions that optimized our production efficiency by 40%. Game-changing results.',
       project: 'IoT Manufacturing Solutions',
-      color: 'brand-teal'
+      color: 'brand-secondary'
     },
     {
       name: 'Robert Wilson',
@@ -62,17 +62,17 @@ const Testimonials = () => {
       rating: 5,
       content: 'From concept to launch in 6 months, they built our real estate platform that now manages $2B+ in property transactions.',
       project: 'Real Estate Platform',
-      color: 'brand-purple'
+      color: 'brand-primary'
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-teal/5 to-brand-purple/5">
+    <section className="py-20 bg-gradient-to-br from-brand-primary/5 to-brand-accent/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
               Client Success Stories
             </span>
           </h2>
@@ -86,15 +86,15 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-in border-t-4 border-brand-teal"
+              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 animate-fade-in border-t-4 border-brand-primary"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Quote Icon */}
               <div className="flex justify-between items-start mb-6">
-                <Quote className="w-8 h-8 text-brand-teal opacity-50" />
+                <Quote className="w-8 h-8 text-brand-primary opacity-50" />
                 <div className="flex space-x-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-brand-pink fill-current" />
+                    <Star key={i} className="w-4 h-4 text-brand-secondary fill-current" />
                   ))}
                 </div>
               </div>
@@ -106,14 +106,14 @@ const Testimonials = () => {
 
               {/* Project Tag */}
               <div className="mb-4">
-                <span className="px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full text-xs font-medium border border-brand-teal/20">
+                <span className="px-3 py-1 bg-brand-primary/10 text-brand-primary rounded-full text-xs font-medium border border-brand-primary/20">
                   {testimonial.project}
                 </span>
               </div>
 
               {/* Author */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-teal to-brand-purple rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-accent rounded-full flex items-center justify-center">
                   <span className="text-white font-semibold text-sm">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </span>
@@ -131,19 +131,19 @@ const Testimonials = () => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
           <div className="animate-fade-in">
-            <div className="text-4xl font-bold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent mb-2">98%</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent mb-2">98%</div>
             <div className="text-gray-600">Client Satisfaction</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="text-4xl font-bold bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent mb-2">500+</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-brand-accent to-brand-green bg-clip-text text-transparent mb-2">500+</div>
             <div className="text-gray-600">Projects Delivered</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="text-4xl font-bold bg-gradient-to-r from-brand-pink to-brand-blue bg-clip-text text-transparent mb-2">15+</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-brand-green to-brand-purple bg-clip-text text-transparent mb-2">15+</div>
             <div className="text-gray-600">Years Experience</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="text-4xl font-bold bg-gradient-to-r from-brand-blue to-brand-teal bg-clip-text text-transparent mb-2">24/7</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-brand-purple to-brand-primary bg-clip-text text-transparent mb-2">24/7</div>
             <div className="text-gray-600">Support Available</div>
           </div>
         </div>
