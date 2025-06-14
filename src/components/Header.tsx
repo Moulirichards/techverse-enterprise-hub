@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -37,8 +38,16 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center relative overflow-hidden">
+                {/* Circuit pattern background */}
+                <div className="absolute inset-0 opacity-20">
+                  <svg viewBox="0 0 32 32" className="w-full h-full">
+                    <path d="M8 8h4v4H8zM20 8h4v4h-4zM8 20h4v4H8zM20 20h4v4h-4z" fill="currentColor" className="text-white"/>
+                    <path d="M12 10h8M10 12v8M22 12v8M14 22h4" stroke="currentColor" className="text-white" strokeWidth="1"/>
+                  </svg>
+                </div>
+                {/* Main T letter */}
+                <span className="text-white font-bold text-sm relative z-10">T</span>
               </div>
               <span className="text-xl font-bold text-brand-primary">
                 TechVerse
