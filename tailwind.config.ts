@@ -22,14 +22,14 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Interactive brand colors - New vibrant palette
+				// Modern blue-green interactive palette
 				brand: {
-					primary: '#FF6B35',    // Vibrant orange
-					secondary: '#F7931E',  // Golden orange
-					accent: '#2E86AB',     // Ocean blue
-					purple: '#A23B72',     // Deep magenta
-					green: '#16DB93',      // Mint green
-					dark: '#2D3748'        // Dark slate
+					primary: '#0F766E',    // Teal 700  
+					secondary: '#0891B2',  // Sky 600
+					accent: '#3B82F6',     // Blue 500
+					purple: '#7C3AED',     // Violet 600
+					green: '#059669',      // Emerald 600
+					dark: '#1F2937'        // Gray 800
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
