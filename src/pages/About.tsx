@@ -18,28 +18,24 @@ const About = () => {
     {
       name: 'Sarah Johnson',
       role: 'CEO & Co-Founder',
-      image: '/placeholder.svg',
       bio: 'Former VP of Engineering at Google with 15+ years in enterprise software development. Led teams that built scalable solutions for millions of users.',
       expertise: ['Strategic Leadership', 'Enterprise Architecture', 'Team Building']
     },
     {
       name: 'Michael Chen',
       role: 'CTO & Co-Founder',
-      image: '/placeholder.svg',
       bio: 'Ex-Principal Engineer at Microsoft Azure. Pioneer in cloud-native architectures and AI/ML implementations for enterprise applications.',
       expertise: ['Cloud Architecture', 'AI/ML Systems', 'DevOps']
     },
     {
       name: 'Emily Rodriguez',
       role: 'VP of Design',
-      image: '/placeholder.svg',
       bio: 'Award-winning designer with experience at Apple and Airbnb. Specialist in user-centered design and design systems for enterprise software.',
       expertise: ['UX Strategy', 'Design Systems', 'User Research']
     },
     {
       name: 'David Kim',
       role: 'VP of Engineering',
-      image: '/placeholder.svg',
       bio: 'Former Lead Architect at Netflix. Expert in building high-performance, scalable systems that handle millions of concurrent users.',
       expertise: ['System Architecture', 'Performance Optimization', 'Scalability']
     }
@@ -50,7 +46,7 @@ const About = () => {
       icon: Heart,
       title: 'Client First',
       description: 'We put our clients at the center of everything we do, ensuring their success is our success.',
-      bgColor: 'bg-brand-teal'
+      bgColor: 'bg-brand-primary'
     },
     {
       icon: Lightbulb,
@@ -62,19 +58,19 @@ const About = () => {
       icon: Shield,
       title: 'Quality',
       description: 'We maintain the highest standards in code quality, security, and performance.',
-      bgColor: 'bg-brand-blue'
+      bgColor: 'bg-brand-accent'
     },
     {
       icon: Users,
       title: 'Collaboration',
       description: 'We believe in the power of diverse teams working together to achieve extraordinary results.',
-      bgColor: 'bg-brand-pink'
+      bgColor: 'bg-brand-secondary'
     },
     {
       icon: Target,
       title: 'Results',
       description: 'We focus on delivering measurable business outcomes and ROI for our clients.',
-      bgColor: 'bg-brand-teal'
+      bgColor: 'bg-brand-green'
     },
     {
       icon: Zap,
@@ -122,10 +118,10 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-brand-teal/10 py-20">
+      <section className="bg-brand-primary/10 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 text-brand-teal">
+            <h1 className="text-5xl font-bold mb-6 text-brand-primary">
               About TechVerse
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -137,7 +133,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-brand-teal mb-2">{stat.number}</div>
+                <div className="text-3xl font-bold text-brand-primary mb-2">{stat.number}</div>
                 <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
             ))}
@@ -207,16 +203,16 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {leadership.map((leader, index) => (
               <div key={index} className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
-                <div className="w-32 h-32 bg-gradient-to-r from-brand-teal to-brand-purple rounded-full flex-shrink-0 flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex-shrink-0 flex items-center justify-center">
                   <span className="text-white text-2xl font-bold">{leader.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{leader.name}</h3>
-                  <p className="text-brand-teal font-medium mb-3">{leader.role}</p>
+                  <p className="text-brand-primary font-medium mb-3">{leader.role}</p>
                   <p className="text-gray-600 mb-4">{leader.bio}</p>
                   <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                     {leader.expertise.map((skill, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full text-sm">
+                      <span key={idx} className="px-3 py-1 bg-brand-primary/10 text-brand-primary rounded-full text-sm">
                         {skill}
                       </span>
                     ))}
@@ -237,18 +233,18 @@ const About = () => {
           </div>
           
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-brand-teal"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-brand-primary"></div>
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="inline-block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <div className="text-brand-teal font-bold text-lg mb-2">{milestone.year}</div>
+                      <div className="text-brand-primary font-bold text-lg mb-2">{milestone.year}</div>
                       <h3 className="font-semibold text-gray-900 mb-2">{milestone.title}</h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
-                  <div className="w-4 h-4 bg-brand-teal rounded-full border-4 border-white shadow-lg z-10"></div>
+                  <div className="w-4 h-4 bg-brand-primary rounded-full border-4 border-white shadow-lg z-10"></div>
                   <div className="w-1/2"></div>
                 </div>
               ))}
@@ -289,11 +285,11 @@ const About = () => {
               }
             ].map((award, index) => (
               <div key={index} className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-r from-brand-teal to-brand-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{award.title}</h3>
-                <p className="text-brand-teal font-medium mb-2">{award.organization}</p>
+                <p className="text-brand-primary font-medium mb-2">{award.organization}</p>
                 <p className="text-gray-600 text-sm">{award.description}</p>
               </div>
             ))}
