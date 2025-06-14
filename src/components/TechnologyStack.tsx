@@ -5,27 +5,33 @@ const TechnologyStack = () => {
   const technologies = [
     {
       category: 'Frontend',
-      items: ['React', 'Vue.js', 'Angular', 'Next.js', 'TypeScript', 'Tailwind CSS']
+      items: ['React', 'Vue.js', 'Angular', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      color: 'brand-teal'
     },
     {
       category: 'Backend',
-      items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'PHP']
+      items: ['Node.js', 'Python', 'Java', '.NET', 'Go', 'PHP'],
+      color: 'brand-purple'
     },
     {
       category: 'Mobile',
-      items: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin', 'Ionic']
+      items: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin', 'Ionic'],
+      color: 'brand-pink'
     },
     {
       category: 'Cloud',
-      items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform']
+      items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform'],
+      color: 'brand-blue'
     },
     {
       category: 'Database',
-      items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'DynamoDB', 'Elasticsearch']
+      items: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'DynamoDB', 'Elasticsearch'],
+      color: 'brand-teal'
     },
     {
       category: 'AI/ML',
-      items: ['TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'Scikit-learn', 'Pandas']
+      items: ['TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'Scikit-learn', 'Pandas'],
+      color: 'brand-purple'
     }
   ];
 
@@ -35,7 +41,7 @@ const TechnologyStack = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
               Technology Stack
             </span>
           </h2>
@@ -49,17 +55,17 @@ const TechnologyStack = () => {
           {technologies.map((tech, index) => (
             <div
               key={tech.category}
-              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border border-gray-200 hover:border-blue-200 transition-all duration-300 animate-fade-in"
+              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-8 border border-gray-200 hover:border-brand-teal/50 hover:shadow-lg transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-semibold mb-6 text-gray-900 border-b border-gray-200 pb-3">
+              <h3 className={`text-xl font-semibold mb-6 text-${tech.color} border-b border-${tech.color}/20 pb-3`}>
                 {tech.category}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {tech.items.map((item, itemIndex) => (
                   <span
                     key={item}
-                    className="px-3 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors cursor-default"
+                    className={`px-3 py-2 bg-${tech.color}/10 text-${tech.color} rounded-full text-sm font-medium hover:bg-${tech.color}/20 transition-colors cursor-default border border-${tech.color}/20`}
                     style={{ animationDelay: `${(index * 6 + itemIndex) * 0.05}s` }}
                   >
                     {item}
@@ -72,10 +78,10 @@ const TechnologyStack = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-brand-teal to-brand-purple rounded-2xl p-8 text-white shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">Ready to leverage these technologies?</h3>
-            <p className="text-blue-100 mb-6">Let's discuss how we can apply the right tech stack for your project.</p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <p className="text-white/90 mb-6">Let's discuss how we can apply the right tech stack for your project.</p>
+            <button className="bg-white text-brand-teal px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
               Start a Conversation
             </button>
           </div>

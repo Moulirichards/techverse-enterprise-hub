@@ -22,12 +22,12 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				// Custom brand colors
+				// Interactive brand colors
 				brand: {
-					teal: '#355C7D',
-					purple: '#725A7A', 
-					pink: '#C56C86',
-					blue: '#3B82F6'
+					teal: '#00D4AA',      // Vibrant teal
+					purple: '#8B5FBF',    // Electric purple
+					pink: '#FF6B6B',      // Coral pink
+					blue: '#4ECDC4'       // Bright turquoise blue
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
