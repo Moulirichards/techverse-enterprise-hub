@@ -6,6 +6,8 @@ import HeroSection from '../components/HeroSection';
 import ServicesOverview from '../components/ServicesOverview';
 import TechnologyStack from '../components/TechnologyStack';
 import Testimonials from '../components/Testimonials';
+import BlogSection from '../components/BlogSection';
+import PortfolioSection from '../components/PortfolioSection';
 
 const Index = () => {
   return (
@@ -16,6 +18,8 @@ const Index = () => {
         <ServicesOverview />
         <TechnologyStack />
         <Testimonials />
+        <BlogSection />
+        <PortfolioSection />
       </main>
       <Footer />
     </div>
