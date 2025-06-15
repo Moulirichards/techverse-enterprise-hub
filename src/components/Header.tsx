@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,17 @@ const Header = () => {
     { name: 'Data Analytics', href: '/services/data-analytics' },
     { name: 'DevOps', href: '/services/devops' },
     { name: 'QA Testing', href: '/services/qa-testing' },
-    { name: 'UI/UX Design', href: '/services/ui-ux-design' }
+    { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+    { name: 'Database Management', href: '/services/database-management' },
+    { name: 'API Development', href: '/services/api-development' },
+    { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    { name: 'System Integration', href: '/services/system-integration' },
+    { name: 'Chatbot Development', href: '/services/chatbot-development' },
+    { name: 'E-commerce Solutions', href: '/services/ecommerce-solutions' },
+    { name: 'Game Development', href: '/services/game-development' },
+    { name: 'Streaming Solutions', href: '/services/streaming-solutions' },
+    { name: 'Blockchain Development', href: '/services/blockchain-development' },
+    { name: 'Process Automation', href: '/services/process-automation' }
   ];
 
   const industries = [
