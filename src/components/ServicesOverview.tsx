@@ -9,7 +9,17 @@ import {
   BarChart3, 
   GitBranch, 
   TestTube, 
-  Palette 
+  Palette,
+  Database,
+  Zap,
+  Globe,
+  Settings,
+  MessageSquare,
+  ShoppingCart,
+  Gamepad2,
+  Video,
+  Lock,
+  Workflow
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -76,6 +86,76 @@ const ServicesOverview = () => {
       title: 'UI/UX Design',
       description: 'User-centered design and exceptional user experiences.',
       href: '/services/ui-ux-design',
+      bgColor: 'bg-brand-purple'
+    },
+    {
+      icon: Database,
+      title: 'Database Management',
+      description: 'Database design, optimization, and migration services.',
+      href: '/services/database-management',
+      bgColor: 'bg-brand-secondary'
+    },
+    {
+      icon: Zap,
+      title: 'API Development',
+      description: 'RESTful and GraphQL API development and integration.',
+      href: '/services/api-development',
+      bgColor: 'bg-brand-primary'
+    },
+    {
+      icon: Globe,
+      title: 'Digital Marketing',
+      description: 'SEO, SEM, and digital marketing strategy services.',
+      href: '/services/digital-marketing',
+      bgColor: 'bg-brand-accent'
+    },
+    {
+      icon: Settings,
+      title: 'System Integration',
+      description: 'Enterprise system integration and workflow automation.',
+      href: '/services/system-integration',
+      bgColor: 'bg-brand-green'
+    },
+    {
+      icon: MessageSquare,
+      title: 'Chatbot Development',
+      description: 'AI-powered chatbots and conversational interfaces.',
+      href: '/services/chatbot-development',
+      bgColor: 'bg-brand-purple'
+    },
+    {
+      icon: ShoppingCart,
+      title: 'E-commerce Solutions',
+      description: 'Custom e-commerce platforms and marketplace development.',
+      href: '/services/ecommerce-solutions',
+      bgColor: 'bg-brand-secondary'
+    },
+    {
+      icon: Gamepad2,
+      title: 'Game Development',
+      description: 'Mobile and web-based game development services.',
+      href: '/services/game-development',
+      bgColor: 'bg-brand-primary'
+    },
+    {
+      icon: Video,
+      title: 'Streaming Solutions',
+      description: 'Video streaming platforms and media delivery systems.',
+      href: '/services/streaming-solutions',
+      bgColor: 'bg-brand-accent'
+    },
+    {
+      icon: Lock,
+      title: 'Blockchain Development',
+      description: 'Smart contracts, DeFi, and blockchain application development.',
+      href: '/services/blockchain-development',
+      bgColor: 'bg-brand-green'
+    },
+    {
+      icon: Workflow,
+      title: 'Process Automation',
+      description: 'Business process automation and workflow optimization.',
+      href: '/services/process-automation',
       bgColor: 'bg-brand-purple'
     }
   ];
